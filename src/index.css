@@ -15,3 +15,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Carousel CSS */
+.slick-prev {
+  z-index: 1 !important;
+  left: 20px !important;
+  top: 35% !important;
+}
+.slick-next {
+  z-index: 1 !important;
+  right: 50px !important;
+  top: 35% !important;
+}
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: black !important;
+}
+
+.slick-prev:before {
+  content: "\2190" !important;
+  color: rgb(90, 79, 79) !important;
+  font-size: 50px !important;
+  z-index: 2 !important;
+}
+.slick-next:before {
+  content: "\2192" !important;
+  color: rgb(90, 79, 79) !important;
+  font-size: 50px !important;
+  z-index: 2 !important;
+}
+@media only screen and (min-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    top: 55% !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .slick-prev {
+    top: 45% !important;
+    left: -70px !important;
+  }
+  .slick-next {
+    top: 45% !important;
+    right: -40px !important;
+  }
+}
