@@ -8,14 +8,14 @@ export const carouselStyles = {
   main: "mt-24 md:mt-36 lg:mt-44 w-[90vw] md:w-[70vw] lg:w-[60vw] mx-auto my-5",
   img: "w-full h-72 md:h-[350px] lg:h-[400px] rounded-3xl",
   infoMain: "flex flex-col lg:flex-row justify-between px-5 mt-5 gap-y-5",
-  title: "text-2xl font-bold text-gray-800",
+  title: "text-2xl font-bold text-gray-800 lg:w-[70%]",
   additional:
     "font-semibold text-gray-500 flex lg:flex-col items-center justify-between gap-y-3",
   date: "text-gray-400",
 };
 
 export const mainBlogsStyles = {
-  main: "grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto w-[90vw] md:w-[70vw] lg:w-[60vw] mt-14",
+  main: "grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto w-[90vw] md:w-[70vw] lg:w-[60vw] mt-24",
   img: "h-72 md:h-96 lg:h-80 w-full rounded-3xl",
   head: "text-xl font-bold tracking-wider my-5 ml-5",
   details: "text-xl tracking-wider ml-5 mr-14 text-gray-600",
