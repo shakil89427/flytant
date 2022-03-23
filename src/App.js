@@ -1,8 +1,8 @@
 import Navbar from "./Components/Navbar";
+import Carousel from "./Components/Carousel";
 import MainBlogs from "./Components/MainBlogs";
 import MoreBlogs from "./Components/MoreBlogs";
 import Footer from "./Components/Footer";
-import Carousel from "./Components/Carousel";
 import useStore from "./Store/useStore";
 import { appStyles } from "./Styles/Styles";
 
