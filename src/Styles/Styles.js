@@ -1,3 +1,8 @@
+export const appStyles = {
+  container: "mt-24 md:mt-36 lg:mt-44",
+  loading: "text-4xl mt-48 text-center font-bold",
+};
+
 export const navStyles = {
   main: "bg-black flex items-center justify-between p-2 md:px-24 md:py-5 fixed w-full top-0 z-50",
   logo: "w-28 md:w-48 lg:w-56",
@@ -5,7 +10,7 @@ export const navStyles = {
 };
 
 export const carouselStyles = {
-  main: "mt-24 md:mt-36 lg:mt-44 w-[90vw] md:w-[70vw] lg:w-[60vw] mx-auto my-5",
+  main: "w-[90vw] md:w-[70vw] lg:w-[60vw] mx-auto my-5",
   img: "w-full h-72 md:h-[350px] lg:h-[400px] rounded-3xl",
   infoMain: "flex flex-col lg:flex-row justify-between px-5 mt-5 gap-y-5",
   title: "text-2xl font-bold text-gray-800 lg:w-[70%]",

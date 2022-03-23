@@ -7,47 +7,87 @@ initializeApp(firebaseConfig);
 const database = getFirestore();
 
 const Store = () => {
+  /* Data States */
   const [carouselData, setCarouselData] = useState([]);
   const [mainBlogsData, setMainBlogsData] = useState([]);
   const [moreBlogsData, setMoreBlogsData] = useState([]);
 
+  /* Loading States */
+  const [carouselDataLoading, setCarouselDataLoading] = useState(true);
+  const [mainBlogsDataLoading, setMainBlogsDataLoading] = useState(true);
+  const [moreBlogsDataLoading, setMoreBlogsDataLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+
+  /* Trigger Loading States */
+  useEffect(() => {
+    if (
+      !carouselDataLoading &&
+      !mainBlogsDataLoading &&
+      !moreBlogsDataLoading
+    ) {
+      setLoading(false);
+    }
+  }, [carouselDataLoading, mainBlogsDataLoading, moreBlogsDataLoading]);
+
   /* Load CarouselData */
   useEffect(() => {
     const colRef = collection(database, "carousel");
-    getDocs(colRef).then((snapshot) => {
-      const data = snapshot.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
+
+    getDocs(colRef)
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setCarouselData(data);
+        setCarouselDataLoading(false);
+      })
+      .catch((err) => {
+        setCarouselDataLoading(false);
+        console.log(err);
       });
-      setCarouselData(data);
-    });
   }, []);
 
   /* Load MainBlogsData */
   useEffect(() => {
     const colRef = collection(database, "blogs");
-    getDocs(colRef).then((snapshot) => {
-      const data = snapshot.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
+
+    getDocs(colRef)
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setMainBlogsData(data);
+        setMainBlogsDataLoading(false);
+      })
+      .catch((err) => {
+        setMainBlogsDataLoading(false);
+        console.log(err);
       });
-      setMainBlogsData(data);
-    });
   }, []);
 
   /* Load MoreBlogsData */
   useEffect(() => {
     const colRef = collection(database, "moreBlogs");
-    getDocs(colRef).then((snapshot) => {
-      const data = snapshot.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
+
+    getDocs(colRef)
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setMoreBlogsData(data);
+        setMoreBlogsDataLoading(false);
+      })
+      .catch((err) => {
+        setMoreBlogsDataLoading(false);
+        console.log(err);
       });
-      setMoreBlogsData(data);
-    });
   }, []);
 
   return {
     carouselData,
     mainBlogsData,
     moreBlogsData,
+    loading,
   };
 };
 
